@@ -1,0 +1,11 @@
+*.exe
+*.test
+*.osz
+*.part
+/dist/
+/config.json
+/Downloads/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
