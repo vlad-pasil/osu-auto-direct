@@ -1,0 +1,32 @@
+name: Windows build and tests
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+          cache: false
+      - name: Unit tests
+        run: go test -v ./...
+      - name: Build Windows x64
+        shell: pwsh
+        run: |
+          $env:GOOS = 'windows'
+          $env:GOARCH = 'amd64'
+          $env:CGO_ENABLED = '0'
+          go build -trimpath -ldflags="-H=windowsgui -s -w" -o osu-Auto-Direct.exe .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: osu-Auto-Direct-windows-x64
+          path: |
+            osu-Auto-Direct.exe
+            DESINSTALAR.bat
+            README.md
+            README.en.md
+            LICENSE
+          if-no-files-found: error
