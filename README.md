@@ -116,4 +116,8 @@ A real-world demonstration of osu! Auto Direct running on Windows, showcasing th
 
 <img width="1280" height="720" alt="MULTIMEDIA-1" src="https://github.com/user-attachments/assets/0f6471b7-ff9b-4fb6-b261-43da5a13be13" />
 
+
+
+
+
 <img width="1280" height="720" alt="MULTIMEDIA-2" src="https://github.com/user-attachments/assets/81d5901b-47f9-4f18-9b00-385fb84258d7" />
